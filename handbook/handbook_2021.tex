@@ -1,0 +1,135 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+
+\title{Pluto 2020-2021}
+\author{Sooner Competitive Robotics }
+\date{2020-2021 Competition}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Sooner Competitive Robotics}
+\fancyhead[R]{Pluto}
+\fancyfoot[C]{\thepage}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+
+\let\cleardoublepage=\clearpage
+
+\tableofcontents
+
+\newpage
+
+\section{The Theme}
+You are tasked with constructing a robot capable of moving shipping containers from the Dock to their individually colored Delivery Zones. The robot will operate in a shipyard on Pluto which receives shipments of supplies that need to be delivered to their destinations. The atmosphere on Pluto does not allow humans or other life forms to oversee this work directly, so the robot must be able to be controlled wirelessly from a distance, seeing only through a camera and sensors placed directly on the robot. Each container destination is blocked by some kind of obstacle, which is unique to each colored Branch. 
+
+\section{Definitions}
+\subsection{Team Representative}
+A member of the team who will remain at the field.
+
+\subsection{Dock}
+The starting area, a hub in the center of the field. 
+
+\subsection{Shipping Containers}
+The four objects that the robot must transport and deliver. The containers are identical in shape, being 4 inches by 4 inches by 8 inches and made of wood. Each container is fully painted a single unique color; these colors are red, blue, yellow, and black. Initially they will be placed horizontally in the Dock. 
+
+\subsection{Branch}
+One of the four pathways extending out of the Dock. Each Branch is a single color which matches one of the containers, and contains a delivery zone where the container must be taken to. Branches may have more than one possible solution, and it could be possible to deliver containers without traversing the entire Branch. 
+
+\subsection{Delivery Zone}
+An area on the ground at the end of each Branch marked by colored tape. The container must be taken here to deliver it. A delivered container must be on the ground, not in contact with the robot, and completely within the zone. 
+
+\subsection{Completed}
+A Branch will be marked as Completed when the robot brings the container to the Delivery Zone and returns to the Dock. Time Bonus points will be acquired and locked in upon Completing a Branch.
+
+\section{The Field}
+The robot and all shipping containers will start in the Dock. The four shipping containers have designated starting locations within the Dock. The team representative may place the robot anywhere in the Dock as long as it is not in contact with any containers or the walls. Each shipping container will be a unique color, and this color will match the Branch and delivery zone to which it belongs. The driver must transport this colored container to the Delivery Zone at the end of its corresponding Branch. After delivering the container, the robot must return to the Dock for the Branch to be Completed. No autonomous behavior is necessary, though teams may implement autonomous subroutines if they wish. \newline 
+
+\noindent
+There are four colored shipping containers and four colored Branches: Red, Blue, Yellow, and Black. These branches can be completed in any order. Each branch will have a unique obstacle or difficulty:  
+
+\begin{itemize}
+    \item Red Branch: Tunnel. There are no lights in the tunnel. 
+    \item Blue Branch: Slalom. This requires high maneuverability. 
+    \item Yellow Branch: Ramp. Even with a shallow slope, this requires high motor power. 
+    \item Black Branch: Distance. This branch consists of straightaways that reward robot speed. 
+\end{itemize}
+
+ADD PIC \newline
+
+\noindent
+All pathways are at least 2 feet wide at all points. All walls (marked in grey) will be 3 inches tall, made of thin wood. Colored areas are the Delivery Zones made of tape. The tunnel has a vertical clearance of 1 foot. The ramp has an angle of 15 degrees and a final height of 8 inches. \newline
+
+\noindent
+GET STEPH TO MAKE A PIC WITH DIMENSIONS OF SHIPPING CONTAINER
+
+\section{Competition Format}
+There are 15 minutes allotted for each Match. The first 5 minutes of this is transition and setup time. This leaves exactly 10 minutes of time to run the robot on the field and acquire points. Teams that take longer than 5 minutes of setup will start eating into their 10 minute run time unless an extension is granted by the judges. Match order will be randomly chosen at the start of the competition day. Each team will play three Matches in total. All three rounds of Matches will be in the same order, so all teams have the same amount of time between Matches. There will be breaks between each of the three rounds of Matches, described in the Schedule section. Two fields will be set up so two teams will compete at once. During the match, one team representative will stay with the bot at the field while the rest of the team will head to the spectator area.
+
+
+\section{Scoring}
+The Branch total is the amount of Points minus the amount of Penalties for that Branch. Each Branch is scored separately. The total score for a Match is the sum of these Branch totals. A team’s final score for the day will be the sum of the scores for their best two Matches, ignoring the score for their worst match. 
+
+\subsection{Getting Points}
+\begin{itemize}
+    \item Container Control: 10 Points for successfully moving one shipping container out of the dock into the correct Branch. 
+    \item Container Delivery: 50 Points for delivering a container into its colored zone. The container must be on the ground, not in contact with the robot, and completely within the boundaries of the zone to count as Delivered.
+    \item Branch Completion: 20 points when the robot returns to the Dock, Completing the Branch.
+    \item Time Bonus: when a Branch is Completed, the team will earn a time bonus equal to 1 point for every 10 seconds left on the clock, rounded down. (i.e., 35 seconds remaining would yield a time bonus of 3 points, while 8 minutes 12 seconds remaining would yield 49 points)
+\end{itemize}
+
+\noindent
+If a robot is not able to control a shipping container, they may visit a Delivery Zone without the container and return to the Dock, gaining points for Branch Completion. The robot must at least partially enter the Delivery Zone. The team will not gain the Time Bonus or points for Container Delivery.
+
+\subsection{Getting Penalties}
+\begin{itemize}
+    \item Wall Touch: 1 point will be lost every time the robot touches a wall. This cannot be accrued more than once in a 3-second period, and sustained contact with the wall by a moving robot will accrue another penalty every 3 seconds. A robot that is not moving will only accrue one penalty for the initial wall touch.
+    \item Breaking the Field: 10 points will be lost for breaking the field. Anything that required a judge to move things (e.g., walls or obstacles) back into place or use duct tape probably constitutes “breaking the field.” This is up to the judges’ discretion but should be easy to avoid. 
+    \item Human Involvement: For a 20 point penalty, the team representative at the field may touch the robot. This could be done to fix a sensor, move a tangled wire, stop it from plowing down a wall, etc. If prolonged touch is necessary to fix something on the bot, only the one penalty will be acquired. The representative may move the robot off the field with judge permission and call team members over to work on it, and when ready may place the bot back on the field in the position it left off. The representative may not touch the shipping container without judge permission. If the robot is holding a shipping container when taken off the field, the judge will place the container on the field in front of the robot, and will not place it back on the robot after it is returned to the field. 
+
+\end{itemize}
+
+\subsection{Restarting}
+At any time while working on a Branch, the team representative at the field may announce a Restart, which will move the robot and container back to the Dock and erase all Points and Penalties accrued for that Branch. This will not reset the time, nor will it affect Point Totals of any other Branches. \newline
+
+\noindent
+If the shipping container falls out of the field or is otherwise inaccessible by the robot, the team representative may not use a Human Involvement penalty to move it back, but must rather announce a Restart to move the container and robot back to the Dock.
+
+
+\section{Technical Specifications}
+Idk what to put here, copy from mercury and get noah’s info on network stuff
+
+\section{Document Submission}
+Teams will be required to submit a photo of their robot before the competition so that we will be able to identify robots with their team names. We want this photo to be as up-to-date as possible, so feel free to submit it as late as the week leading up to the competition. \newline
+
+\noindent
+Teams must also submit a name for their robot, which they will do with their registration form. The registration form and payment must be submitted by Saturday, March 21st, 2020. \newline
+
+\noindent
+More added here
+
+\section{Awards}
+Final scores are used to determine ranked awards. Trophies will be given for teams ranked first, second, and third overall. A trophy will also be given to the team winning the Innovative Design Award. This is a judges’ choice award given to the team with the most simultaneously creative and functional design. Ideally robots with “innovative design” are capable of controlling the container more successfully and distinctly than other teams, and are technically able to complete any of the four Branches. This award winner will be chosen by our faculty panel. 
+
+
+\section{Schedule and Location}
+Final scores are used to determine ranked awards. Trophies will be given for teams ranked first, second, and third overall. A trophy will also be given to the team winning the Innovative Design Award. This is a judges’ choice award given to the team with the most simultaneously creative and functional design. Ideally robots with “innovative design” are capable of controlling the container more successfully and distinctly than other teams, and are technically able to complete any of the four Branches. This award winner will be chosen by our faculty panel. \newline
+
+\noindent
+add time table here \newline
+
+\noindent
+The REPF address is: \newline 
+
+\centering ExxonMobil Lawrence G. Rawl Engineering Practice Facility
+\centering 850 S. Jenkins Ave
+\centering Norman, OK 73019 
+
+ADD MAP here
+
+\end{document}
