@@ -1,0 +1,1 @@
+Log in to Overleaf.com with the SCR account to edit the handbook docunment, then copy and paste changes into the respective files in this repository. Do not directly edit on GitHub, but rather make sure that Overleaf has the most up-to-date version.
